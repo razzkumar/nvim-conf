@@ -86,7 +86,9 @@
 	set textwidth=80
 	set colorcolumn=80
 
-	set background=dark
+  set termguicolors     " enable true colors support
+  "set background=light
+  set background=dark
 	inoremap jk <ESC>
 
   nmap <leader>fg :%!grep <c-r>=expand("<cword>")<cr>
@@ -138,3 +140,5 @@
   nnoremap <C-`> :below term <CR>
   nnoremap <silent> <Leader>= :exe "resize " . (winheight(0) * 3/2)<CR>
   nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
+
+au BufNewFile,BufRead Jenkinsfile setf groovy

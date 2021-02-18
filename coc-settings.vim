@@ -19,7 +19,7 @@ let g:coc_global_extensions = [
   \ 'coc-eslint',
   \ 'coc-prettier',
   \ 'coc-json',
-  \ 'coc-omnisharp',
+  \ 'coc-emmet'
   \ ]
 " from readme
 " if hidden is not set, TextEdit might fail.
@@ -82,12 +82,12 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <F2> <Plug>(coc-rename)
 nmap <leader>rr <Plug>(coc-rename)
 
-nnoremap <leader>prw :CocSearch <C-R>=expand("<cword>")<CR><CR>
+nnoremap <C-S-f> :CocSearch <C-R>=expand("<cword>")<CR><CR>
 
 " Remap for format selected region
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
-noremap <C-S-f> :Format<CR>
+"noremap <C-S-f> :Format<CR>
 augroup mygroup
   autocmd!
   " Setup formatexpr specified filetype(s).
@@ -116,7 +116,7 @@ nmap <silent> <C-d> <Plug>(coc-range-select)
 xmap <silent> <C-d> <Plug>(coc-range-select)
 
 " Use `:Format` to format current buffer
-command! -nargs=0 Format :call CocAction('format')
+"command! -nargs=0 Format :call CocAction('format')
 
 " Use `:Fold` to fold current buffer
 command! -nargs=? Fold :call     CocAction('fold', <f-args>)

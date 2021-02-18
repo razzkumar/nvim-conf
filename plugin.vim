@@ -27,7 +27,9 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim' " fuzzy find files
 Plug 'scrooloose/nerdcommenter'
+
 Plug 'morhetz/gruvbox'
+Plug 'ayu-theme/ayu-vim'
 Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 "Plug 'ekalinin/Dockerfile.vim'
 Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
@@ -47,5 +49,10 @@ Plug 'mlaursen/vim-react-snippets'
 "Plug 'jiangmiao/auto-pairs'
 Plug 'rhysd/git-messenger.vim'
 Plug 'alvan/vim-closetag'
+"Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(69) } }
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'stsewd/fzf-checkout.vim'
 call plug#end()
 

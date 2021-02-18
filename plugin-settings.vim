@@ -106,8 +106,25 @@
   nmap <leader>gu :diffget //2<CR>
   nmap <leader>gs :G<CR>
 
-  colorscheme gruvbox
+let g:fzf_layout = { 'window' : { 'width': 0.8, 'height': 0.8} }
+let $FZF_DEFAULT_OPTS="--reverse"
+nnoremap <leader>gc :GCheckout<CR>
+"let ayucolor="light"  " for might be mirage dark
+"colorscheme ayu
+
+colorscheme gruvbox
 
 " Git Messenger
   noremap <C-g> :GitMessenger<CR>
   let g:git_messenger_no_default_mappings = v:true
+
+let g:terraform_fmt_on_save=1
+
+" Config for the firevim
+
+augroup FIRE_VIM
+  autocmd!
+
+  au BufEnter github.com_*.txt set filetype markdown
+  au BufEnter teti.es_*.txt set filetype typescript
+augroup END
