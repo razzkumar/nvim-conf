@@ -42,6 +42,7 @@
   map <leader>t :!npm run test<CR>
   map <leader>b :!npm run build<CR>
 
+  nmap <C-s> :w<CR>
 " Replace all is aliased to S.
 	nnoremap S :%s//g<Left><Left>
 
@@ -122,23 +123,28 @@
 " Splits open at the bottom and right, which is non-retarded, unlike vim defaults.
 	set splitbelow splitright
 
-"Config for the terminal mode
-  if has('nvim')
-    tnoremap <ESC> <C-\><C-n>
-    tnoremap <C-]> <ESC>
-    "Switching between split window
-    tnoremap <A-h> <c-\><c-n><c-w>h
-    tnoremap <A-j> <c-\><c-n><c-w>j
-    tnoremap <A-k> <c-\><c-n><c-w>k
-    tnoremap <A-l> <c-\><c-n><c-w>l
-    noremap <A-h> <c-w>h
-    noremap <A-j> <c-w>j
-    noremap <A-k> <c-w>k
-    noremap <A-l> <c-w>l
- endif
 
-  nnoremap <C-`> :below term <CR>
-  nnoremap <silent> <Leader>= :exe "resize " . (winheight(0) * 3/2)<CR>
-  nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
+"Config for the terminal mode
+ if has('nvim')
+   tnoremap <ESC> <C-\><C-n>
+   tnoremap <C-]> <ESC>
+   "Switching between split window
+   tnoremap <A-h> <c-\><c-n><c-w>h
+   tnoremap <A-j> <c-\><c-n><c-w>j
+   tnoremap <A-k> <c-\><c-n><c-w>k
+   tnoremap <A-l> <c-\><c-n><c-w>l
+   noremap <A-h> <c-w>h
+   noremap <A-j> <c-w>j
+   noremap <A-k> <c-w>k
+   noremap <A-l> <c-w>l
+endif
+
+nnoremap <M-`> :below term <CR>
+nnoremap <silent> <Leader>= :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
+
+noremap ; :
+"noremap : ;
+noremap <S-Q> :q<CR>
 
 au BufNewFile,BufRead Jenkinsfile setf groovy

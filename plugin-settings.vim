@@ -14,13 +14,8 @@
   set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
   "set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 
-  let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\v[\/]\.(git|hg|svn|venv|env)|node_modules|venv$',
-    \ 'file': '\v\.(exe|so|dll)$',
-    \ 'link': 'some_bad_symbolic_links',
-    \ }
-	map <leader>n :CtrlPBuffer<CR>
-	map <C-b> :CtrlPBuffer<CR>
+  map <C-p> :FZF<CR>
+	map <C-b> :Buffer<CR>
 
 " Nerd tree
   autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -105,7 +100,6 @@
   nmap <leader>gh :diffget //3<CR>
   nmap <leader>gu :diffget //2<CR>
   nmap <leader>gs :G<CR>
-
 let g:fzf_layout = { 'window' : { 'width': 0.8, 'height': 0.8} }
 let $FZF_DEFAULT_OPTS="--reverse"
 nnoremap <leader>gc :GCheckout<CR>
