@@ -33,4 +33,4 @@ if has('persistent_undo')
 endif
 set undodir=$HOME/.config/nvim/undo_files
 
-let g:vimwiki_list = [{'path': '$STORAGE/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_list = [{'path': '$HOME/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
