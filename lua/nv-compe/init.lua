@@ -1,3 +1,5 @@
+vim.o.completeopt = "menuone,noselect"
+
 require'compe'.setup {
   enabled = true;
   autocomplete = true;
@@ -25,10 +27,6 @@ require'compe'.setup {
     treesitter = true;
   };
 }
-
-
-
-
 
 local t = function(str)
   return vim.api.nvim_replace_termcodes(str, true, true, true)

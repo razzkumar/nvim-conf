@@ -18,7 +18,6 @@ local npairs = require('nvim-autopairs')
 
 -- skip it, if you use another global object
 _G.MUtils= {}
-
 vim.g.completion_confirm_key = ""
 MUtils.completion_confirm=function()
   if vim.fn.pumvisible() ~= 0  then
@@ -35,6 +34,5 @@ MUtils.completion_confirm=function()
     return npairs.check_break_line_char()
   end
 end
-
 
 remap('i' , '<CR>','v:lua.MUtils.completion_confirm()', {expr = true , noremap = true})
