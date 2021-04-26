@@ -5,6 +5,7 @@ lspconf.dockerls.setup{}
 lspconf.gopls.setup{}
 lspconf.pyright.setup{}
 lspconf.tsserver.setup{}
+lspconf.ccls.setup{}
 lspconf.jsonls.setup {
     commands = {
       Format = {
