@@ -32,8 +32,8 @@ vim.api.nvim_set_keymap('i', 'kj', '<ESC>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('i', 'jj', '<ESC>', { noremap = true, silent = true })
 
 -- Tab switch buffer
-vim.api.nvim_set_keymap('n', '<TAB>', ':bnext<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<S-TAB>', ':bprevious<CR>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<TAB>', ':bnext<CR>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<S-TAB>', ':bprevious<CR>', { noremap = true, silent = true })
 
 -- Move selected line / block of text in visual mode
 vim.api.nvim_set_keymap('x', 'K', ':move \'<-2<CR>gv-gv\'', { noremap = true, silent = true })
@@ -46,7 +46,14 @@ vim.api.nvim_set_keymap('x', 'J', ':move \'>+1<CR>gv-gv\'', { noremap = true, si
 vim.api.nvim_set_keymap('n','<C-b>', ':Telescope buffers<CR>',{ noremap = true, silent = true })
 vim.api.nvim_set_keymap('n','<leader>ff', ':Telescope find_files<CR>',{})
 vim.api.nvim_set_keymap('n','<leader>fg', ':Telescope git_files<CR>',{})
+vim.api.nvim_set_keymap('n','<C-p>', ':Telescope git_files<CR>',{})
 vim.api.nvim_set_keymap('n','<leader>gb', ':Telescope git_branches<CR>',{})
 vim.api.nvim_set_keymap('n','<leader>gs', ':Telescope git_status<CR>',{})
 vim.api.nvim_set_keymap('n','<leader>fr', ':Telescope registers<CR>',{})
 vim.api.nvim_set_keymap('n','<leader>gcc', ':Telescope git_commits<CR>',{})
+
+vim.api.nvim_set_keymap('n','<C-F>', ':Neoformat<CR>',{noremap = true, silent = true})
+vim.api.nvim_set_keymap('n','<leader>jd', ':JsDoc<CR>',{noremap = true, silent = true})
+vim.api.nvim_set_keymap('n','<leader>jf', ':JsDocFormat<CR>',{noremap = true, silent = true})
+-- vim.api.nvim_set_keymap('n','<leader>W', ':bdelete',{noremap = true, silent = true})
+

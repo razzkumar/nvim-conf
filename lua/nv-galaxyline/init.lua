@@ -32,25 +32,27 @@ end
 --     highlight = {colors.bg,colors.bg}
 --   },
 -- }
--- gls.left[2] = {
---   ViMode = {
---     provider = function()
---       local alias = {n = 'NORMAL',i = 'INSERT',c= 'COMMAND',V= 'VISUAL', [''] = 'VISUAL'}
---       return alias[vim.fn.mode()]
---     end,
---     separator = ' ',
---     separator_highlight = {colors.yellow,function()
---       if not buffer_not_empty() then
---         return colors.purple
---       end
---       return colors.purple
---     end},
---     highlight = {colors.grey,colors.purple,'bold'},
---   },
--- }
+--[[ gls.left[2] = {
+  ViMode = {
+    provider = function()
+      local alias = {n = 'NORMAL',i = 'INSERT',c= 'COMMAND',V= 'VISUAL', [''] = 'VISUAL'}
+      return alias[vim.fn.mode()]
+    end,
+    separator = ' ',
+    separator_highlight = {colors.yellow,function()
+      if not buffer_not_empty() then
+        return colors.purple
+      end
+      return colors.purple
+    end},
+    highlight = {colors.grey,colors.purple,'bold'},
+  },
+} ]]
 gls.left[2] = {
   ViMode = {
     provider = function()
+
+      local alias = {n = 'NORMAL',i = 'INSERT',c= 'COMMAND',v= 'VISUAL', [''] = 'VISUAL'}
       -- auto change color according the vim mode
       local mode_color = {n = colors.purple, 
                           i = colors.green,
@@ -73,7 +75,7 @@ gls.left[2] = {
                           ['!']  = colors.red,
                           t = colors.red}
       vim.api.nvim_command('hi GalaxyViMode guibg='..mode_color[vim.fn.mode()])
-      return '  NVCode '
+      return "  " .. alias[vim.fn.mode()].."  "
     end,
     separator = ' ',
     separator_highlight = {colors.yellow,function()
@@ -85,24 +87,24 @@ gls.left[2] = {
     highlight = {colors.grey,colors.bg,'bold'},
   },
 }
--- gls.left[3] ={
---   FileIcon = {
---     separator = ' ',
---     provider = 'FileIcon',
---     condition = buffer_not_empty,
---     highlight = {require('galaxyline.provider_fileinfo').get_file_icon_color,colors.bg},
---   },
--- }
--- gls.left[4] = {
---   FileName = {
---     provider = {'FileSize'},
---     condition = buffer_not_empty,
---     separator = ' ',
---     separator_highlight = {colors.purple,colors.bg},
---     highlight = {colors.magenta,colors.bg}
---   }
--- }
-
+--[[ gls.left[3] ={
+  FileIcon = {
+    separator = ' ',
+    provider = 'FileIcon',
+    condition = buffer_not_empty,
+    highlight = {require('galaxyline.provider_fileinfo').get_file_icon_color,colors.bg},
+  },
+}
+gls.left[4] = {
+  FileName = {
+    provider = {'FileSize'},
+    condition = buffer_not_empty,
+    separator = ' ',
+    separator_highlight = {colors.purple,colors.bg},
+    highlight = {colors.magenta,colors.bg}
+  }
+}
+ ]]
 gls.left[3] = {
   GitIcon = {
     provider = function() return ' ' end,
@@ -199,14 +201,23 @@ gls.left[13] = {
     highlight = {colors.orange,colors.bg},
   }
 }
-gls.right[1]= {
+
+gls.right[1] ={
+  FileIcon = {
+    separator = '',
+    provider = 'FileIcon',
+    condition = buffer_not_empty,
+    highlight = {require('galaxyline.provider_fileinfo').get_file_icon_color,colors.bg},
+  },
+}
+--[[ gls.right[1]= {
   FileFormat = {
     provider = 'FileFormat',
     separator = ' ',
     separator_highlight = {colors.bg,colors.bg},
     highlight = {colors.grey,colors.bg},
   }
-}
+} ]]
 gls.right[2] = {
   LineInfo = {
     provider = 'LineColumn',

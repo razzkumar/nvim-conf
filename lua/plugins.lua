@@ -13,7 +13,7 @@ end
 return require('packer').startup(function()
   -- Packer can manage itself as an optional plugin
   use {'wbthomason/packer.nvim', opt = true}
-
+  -- use {'fatih/vim-go', run= ':GoUpdateBinaries' }
   -- Information
   use 'nanotee/nvim-lua-guide'
 
@@ -22,7 +22,8 @@ return require('packer').startup(function()
   use 'glepnir/lspsaga.nvim'
   use 'onsails/lspkind-nvim'
   use 'kosayoda/nvim-lightbulb'
-  use 'mfussenegger/nvim-jdtls'
+  use 'kabouzeid/nvim-lspinstall'
+  -- use 'mfussenegger/nvim-jdtls'
 
   -- Debugging
   use 'mfussenegger/nvim-dap'
@@ -43,6 +44,13 @@ return require('packer').startup(function()
   use 'glepnir/galaxyline.nvim'
   use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
 
+  -- wiki
+
+  use 'vimwiki/vimwiki'
+
+   -- terraform
+  use 'hashivim/vim-terraform'
+
   -- Telescope
   use 'nvim-lua/popup.nvim'
   use 'nvim-lua/plenary.nvim'
@@ -58,7 +66,13 @@ return require('packer').startup(function()
   use 'norcalli/nvim-colorizer.lua'
 
   -- Git
-  use 'TimUntersberger/neogit'
+  use {'TimUntersberger/neogit', 
+  	requires = {
+		'nvim-lua/plenary.nvim',
+        	'sindrets/diffview.nvim'
+      }
+      }
+
   use {'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
 
   -- General Plugins
@@ -67,4 +81,10 @@ return require('packer').startup(function()
   use 'unblevable/quick-scope'
   use 'airblade/vim-rooter'
   use 'b3nj5m1n/kommentary'
+
+  use 'sbdchd/neoformat'
+  --- JS doc
+  use 'heavenshell/vim-jsdoc'
+
+  use 'sindrets/diffview.nvim'
 end)
