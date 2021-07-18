@@ -14,7 +14,7 @@ try
 lua << END
   local time
   local profile_info
-  local should_profile = false
+  local should_profile = nil
   if should_profile then
     local hrtime = vim.loop.hrtime
     profile_info = {}
@@ -72,6 +72,10 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["diffview.nvim"] = {
+    loaded = true,
+    path = "/home/razzkumar/.local/share/nvim/site/pack/packer/start/diffview.nvim"
+  },
   ["galaxyline.nvim"] = {
     loaded = true,
     path = "/home/razzkumar/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
@@ -208,6 +212,10 @@ _G.packer_plugins = {
   vimwiki = {
     loaded = true,
     path = "/home/razzkumar/.local/share/nvim/site/pack/packer/start/vimwiki"
+  },
+  ["wal.vim"] = {
+    loaded = true,
+    path = "/home/razzkumar/.local/share/nvim/site/pack/packer/start/wal.vim"
   }
 }
 

@@ -66,7 +66,7 @@ return require('packer').startup(function()
   use 'norcalli/nvim-colorizer.lua'
 
   -- Git
-  use {'TimUntersberger/neogit', 
+  use {'TimUntersberger/neogit',
   	requires = {
 		'nvim-lua/plenary.nvim',
         	'sindrets/diffview.nvim'
@@ -85,6 +85,6 @@ return require('packer').startup(function()
   use 'sbdchd/neoformat'
   --- JS doc
   use 'heavenshell/vim-jsdoc'
-
-  use 'sindrets/diffview.nvim'
+  -- pywal color scheme
+  use 'dylanaraps/wal.vim'
 end)
